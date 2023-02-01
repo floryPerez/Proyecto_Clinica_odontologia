@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  frontend:
+    image: frontend
+    ports:
+      - 3000:3000
+    depends_on:
+      - backend
+  backend:
+    image: backend
+    ports:
+      - 4000:4000
+    depends_on:
+      - mongodb
+  mongodb:
+    image: mongo #nombre de la imagen que se tiene en docker
